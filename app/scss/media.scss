@@ -1,0 +1,27 @@
+$containerWidth: 1200px;
+$baseFontSize: 16px;
+
+//breakpoints
+
+$tablets: 768px;
+$phones: 480px;
+
+//colors
+
+$background-black: #1F1F1F;
+$orange: #FF8154;
+$text3: #F5F5F5;
+$purple: #722ED1;
+$yellow: #FFBA33;
+
+@mixin phones{
+  @media screen and (max-width: $phones){
+    @content;
+  }
+}
+
+@mixin tablets{
+  @media screen and (max-width: $tablets){
+    @content;
+  }
+}

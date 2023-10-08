@@ -1,0 +1,39 @@
+.present {
+  padding: 73px 0;
+
+  &__block {
+    border-radius: 60px;
+    background: $background-black;
+    display: flex;
+    padding: 80px;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
+    min-height: 871px;
+  }
+
+  &__block-left,
+  &__block-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__subtitle {
+    color: $orange;
+    font-family: Roboto;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 62.4px */
+  }
+
+  &__text {
+    color: $text3;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 130%; /* 41.6px */
+  }
+}

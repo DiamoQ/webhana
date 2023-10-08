@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+html {
+  height: 100%;
+  font-size: $baseFontSize;
+  scroll-behavior: smooth;
+
+  @include phones {
+    font-size: 3.333vmin;
+  }
+}
+
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #292929;
+  line-height: 1.42;
+  background: #fff;
+  margin: 0px;
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  flex: 1 0 auto;
+  margin-top: 84px;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: $containerWidth;
+  margin: 0px auto;
+  position: relative;
+}
+
+.section-title {
+  color: #171616;
+  font-size: 42px;
+}
+
+.btn {
+  color: $text3;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 58.087px; /* 181.522% */
+  letter-spacing: -0.64px;
+  cursor: pointer;
+}
+
+.btn-to-up {
+  position: fixed;
+  width: 45px;
+  height: 125px;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  background-color: #6cac3d;
+  color: #fff;
+  font-size: 20px;
+  bottom: 15%;
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}

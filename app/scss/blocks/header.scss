@@ -30,6 +30,25 @@
     .menu {
       margin-right: 40px;
     }
+
+    .header__logo {
+      &-link {
+        color: $text;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 70%; /* 28px */
+        letter-spacing: -0.8px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+      }
+
+      &-image {
+        transform: translateY(-10px);
+        margin-right: 8px;
+      }
+    }
   }
 
   &__right {
@@ -54,11 +73,36 @@
   &__contacts {
     display: flex;
     flex-direction: column;
+    padding-right: 55px;
+    position: relative;
   }
 
   .menu, 
   .header__logo,
   .header__contacts-link {
     cursor: pointer;
+  }
+
+  .header__contacts-link {
+    width: 100%;
+    position: relative;
+    line-height: 26px;
+    &--mail::after {
+      content: url(../../images/icons/mail.svg);
+      display: block;
+      position: absolute;
+      right: -55px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--tel::after {
+      content: url(../../images/icons/phone-icon.svg);
+      display: block;
+      position: absolute;
+      right: -55px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }

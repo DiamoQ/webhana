@@ -4,6 +4,7 @@
   margin-top: 84px;
   padding-top: 88px;
   padding-bottom: 140px;
+  position: relative;
 
   &__title {
     font-size: 80px;
@@ -38,4 +39,13 @@
     letter-spacing: -0.64px;
     cursor: pointer;
   }
+}
+
+.logo__icon {
+  width: 102px;
+  height: 102px;
+  background-image: url(../../images/logo/webhana-logo-black.png);
+  position: absolute;
+  top: 0;
+  right: 0;
 }

@@ -47,6 +47,8 @@ function script() {
 function building() {
   return src([
     'app/css/style.min.css',
+    'app/images/*',
+    'app/images/*/*.*',
     'app/images/*.*',
     'app/images/*.svg',
     // 'app/images/sprite.svg',
@@ -85,37 +87,21 @@ function fonts() {
     .pipe(dest("app/fonts/fonts"))
 }
 
-// function images() {
-//   return src(["app/images/src/*.*", "!app/images/src/*.svg"])
-//     .pipe(newer("app/images/dist"))
-//     .pipe(avif({quality: 50}))
-
-//     .pipe(src("app/images/src/*.*"))
-//     .pipe(newer("app/images/dist"))
-//     .pipe(webp())
-
-//     .pipe(src("app/images/src/*.*"))
-//     .pipe(newer("app/images"))
-//     .pipe(imagemin())
-
-//     .pipe(dest("app/images"))
-// }
-
 function images() {
-  return src('src/images/*.*')
-    .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.mozjpeg({quality: 75, progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
-      imagemin.svgo({
-        plugins: [
-          {removeViewBox: true},
-          {cleanupIDs: false}
-        ]
-      })
-    ]))
-    .pipe(dest('dist/images'))
-};
+  return src(["app/images/src/*.*", "!app/images/src/*.svg"])
+    .pipe(newer("app/images/dist"))
+    .pipe(avif({quality: 50}))
+
+    .pipe(src("app/images/src/*.*"))
+    .pipe(newer("app/images/dist"))
+    .pipe(webp())
+
+    .pipe(src("app/images/src/*.*"))
+    .pipe(newer("app/images"))
+    .pipe(imagemin())
+
+    .pipe(dest("app/images"))
+}
 
 function sprite() {
   return src("app/images/*.svg")
@@ -140,6 +126,6 @@ exports.fonts = fonts;
 exports.pages = pages;
 
 
-exports.build = series(cleanDist, building, images);
+exports.build = series(cleanDist, building);
 exports.default = parallel(style, fonts, script, images, pages, process);
 

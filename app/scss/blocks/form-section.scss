@@ -1,9 +1,29 @@
 .form__block {
   margin-bottom: 245px;
   padding: 71px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+
+  &::before {
+    content: url(../../images/backgrounds/main-5.png);
+    position: absolute;
+    top: -239px;
+    left: 0px;
+    z-index: -2;
+  }
+
+  &::after {
+    content: url(../../images/backgrounds/main-6.png);
+    position: absolute;
+    top: -27px;
+    right: 0;
+    z-index: -2;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &-title {
     color: $text;

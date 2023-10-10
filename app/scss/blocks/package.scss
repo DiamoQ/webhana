@@ -1,5 +1,15 @@
 .package {
   padding: 85px 0;
+  position: relative;
+
+  &::before {
+    content: url(../../images/backgrounds/main-4.png);
+    border-radius: 50%;
+    position: absolute;
+    top: -83px;
+    left: calc(50% - 30px);
+    z-index: -2;
+  }
 
   &__list {
     display: flex;

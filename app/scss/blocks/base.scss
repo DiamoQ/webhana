@@ -18,6 +18,7 @@ body {
   background: #fff;
   margin: 0px;
   position: relative;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -47,6 +48,7 @@ body {
   max-width: $containerWidth;
   margin: 0px auto;
   position: relative;
+  width: 100%;
 }
 
 .section-title {

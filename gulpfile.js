@@ -95,7 +95,7 @@ function images() {
     .pipe(webp())
 
     .pipe(src("app/images/src/*.*"))
-    .pipe(newer("app/images/dist"))
+    .pipe(newer("app/images"))
     .pipe(imagemin())
 
     .pipe(dest("app/images"))

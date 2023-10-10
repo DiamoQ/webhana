@@ -1,5 +1,14 @@
 .services {
   padding: 132px 0;
+  position: relative;
+
+  &::before {
+    content: url(../../images/backgrounds/main-3.png);
+    position: absolute;
+    top: -200px;
+    left: 0px;
+    z-index: -2;
+  }
 
   &__block {
     display: flex;

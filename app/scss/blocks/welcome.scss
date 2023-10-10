@@ -1,10 +1,44 @@
-.welcome {
-  display: flex;
-  flex-direction: column;
+.welcome {   
   margin-top: 84px;
   padding-top: 88px;
   padding-bottom: 140px;
   position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+
+  &::before {
+    content: " ";
+    background-image: url(../../images/backgrounds/main-1.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: auto 100%;
+    width: 1372px;
+    height: 1358px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate(50%, -50%);
+  }
+
+  &::after {
+    content: " ";
+    background-image: url(../../images/backgrounds/main-2.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: 100%;
+    width: 756px;
+    height: 739px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -93px;
+    right: -215px;
+  }
 
   &__title {
     font-size: 80px;
@@ -46,6 +80,6 @@
   height: 102px;
   background-image: url(../../images/logo/webhana-logo-black.png);
   position: absolute;
-  top: 0;
+  top: -88px;
   right: 0;
 }

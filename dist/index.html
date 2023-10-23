@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>WEBHANA</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
 
 </head>
 
@@ -20,7 +24,7 @@
       <div class="container">
         <div class="header__wrapper">
           <div class="header__left">
-            <div class="menu">
+            <div class="menu menu__pc">
               <div class="menu__top-line"></div>
               <div class="menu__middle-line"></div>
               <div class="menu__bottom-line"></div>
@@ -44,15 +48,29 @@
               <a href="#" class="header__contacts-link header__contacts-link--tel">+ 7(999)888-23-23</a>
             </div>
           </div>
+          <div class="menu-tablet">
+            <div class="menu-tablet__top-line"></div>
+            <div class="menu-tablet__middle-line"></div>
+            <div class="menu-tablet__bottom-line"></div>
+          </div>
         </div>
       </div>
+      <nav class="menu-tablet__nav">
+        <a href="#" class="menu-tablet__nav-link">Главная</a>
+        <a href="#" class="menu-tablet__nav-link">Статьи</a>
+        <a href="#" class="menu-tablet__nav-link">Тарифы</a>
+        <a href="#" class="menu-tablet__nav-link">Связаться</a>
+      </nav>
     </header>
     <main>
       <div class="section welcome">
         <div class="container">
           <h1 class="title welcome__title">Маркетинговая<br> веб-студия</h1>
-          <p class="welcome__text">Наша цель - донести до клиента<br> вашу ценность</p>
+          <p class="welcome__text welcome__text--bold">Наша цель - донести до клиента вашу ценность</p>
+          <p class="welcome__text-tablet">Студия <b>WEBHANA</b> предлагает <b>комплексный</b> подход к маркетингу, интернет-рекламе, дизайну и продажам в режиме <b>одного окна</b>. </p>
           <div class="btn welcome__btn">Получить бесплатную консультацию</div>
+          <div class="btn welcome__btn welcome__btn--tablet">Связаться</div>
+          <a href="#services" class="down-button"></a>
           <div class="logo__icon"></div>
         </div>
       </div>
@@ -77,43 +95,61 @@
           </div>
         </div>
       </div>
-      <div class="section services">
+      <div class="section services" id="services">
         <div class="container">
           <div class="services__block">
             <div class="services__btn services__btn--left"></div>
-            <ul class="services__slider">
-              <li class="services__slide">
-                <div class="services__slide-head">
-                  <h3 class="services__slide-title">Разработка сайтов</h3>
+            <div class="services__slider">
+              <div>
+                <div class="services__slide" style="background-image: url('./images/backgrounds/55c21a381637a1068754e726d272afd7.jpg');">
+                  <div class="services__slide-head">
+                    <h3 class="services__slide-title">Разработка сайтов</h3>
+                  </div>
+                  <div class="services__slide-content">
+                    <p class="services__slide-text">Cоздадим эффективный и эстетичный сайт, который будет приносить
+                      клиентов и прибыль, с учетом ваших пожеланий и целей</p>
+                    <div class="btn service__btn">Подробнее</div>
+                  </div>
                 </div>
-                <div class="services__slide-content">
-                  <p class="services__slide-text">Cоздадим эффективный и эстетичный сайт, который будет приносить
-                    клиентов и прибыль, с учетом ваших пожеланий и целей</p>
-                  <div class="btn service__btn">Подробнее</div>
+              </div>
+              <div>
+                <div class="services__slide" style="background-image: url('./images/backgrounds/businesswoman-laptop.jpg');">
+                  <div class="services__slide-head">
+                    <h3 class="services__slide-title">Аналитика</h3>
+                  </div>
+                  <div class="services__slide-content">
+                    <p class="services__slide-text">Внедрим бизнес-аналитику, которая позволит вам точно узнать
+                      эффективность и окупаемость ваших рекламных каналов до продаж и прибыли, отследить каждую копейку
+                      рекламных расходов</p>
+                    <div class="btn service__btn">Подробнее</div>
+                  </div>
                 </div>
-              </li>
-              <li class="services__slide active">
-                <div class="services__slide-head">
-                  <h3 class="services__slide-title">Аналитика</h3>
+              </div>
+              <div>
+                <div class="services__slide" style="background-image: url('./images/backgrounds/i.jpeg');">
+                  <div class="services__slide-head">
+                    <h3 class="services__slide-title">SMM</h3>
+                  </div>
+                  <div class="services__slide-content">
+                    <p class="services__slide-text">Поможем создать мощную медийную кампанию и целевой трафик на сайт, и
+                      как следствие продажи с прибылью, с помощью контекстной рекламы</p>
+                    <div class="btn service__btn">Подробнее</div>
+                  </div>
                 </div>
-                <div class="services__slide-content">
-                  <p class="services__slide-text">Внедрим бизнес-аналитику, которая позволит вам точно узнать
-                    эффективность и окупаемость ваших рекламных каналов до продаж и прибыли, отследить каждую копейку
-                    рекламных расходов</p>
-                  <div class="btn service__btn">Подробнее</div>
+              </div>
+              <div>
+                <div class="services__slide" style="background-image: url('./images/backgrounds/i.jpeg');">
+                  <div class="services__slide-head">
+                    <h3 class="services__slide-title">SMM</h3>
+                  </div>
+                  <div class="services__slide-content">
+                    <p class="services__slide-text">Поможем создать мощную медийную кампанию и целевой трафик на сайт, и
+                      как следствие продажи с прибылью, с помощью контекстной рекламы</p>
+                    <div class="btn service__btn">Подробнее</div>
+                  </div>
                 </div>
-              </li>
-              <li class="services__slide">
-                <div class="services__slide-head">
-                  <h3 class="services__slide-title">SMM</h3>
-                </div>
-                <div class="services__slide-content">
-                  <p class="services__slide-text">Поможем создать мощную медийную кампанию и целевой трафик на сайт, и
-                    как следствие продажи с прибылью, с помощью контекстной рекламы</p>
-                  <div class="btn service__btn">Подробнее</div>
-                </div>
-              </li>
-            </ul>
+              </div>
+            </div>
             <div class="services__btn services__btn--right"></div>
           </div>
           <ul class="services__pagination">
@@ -122,94 +158,116 @@
       </div>
       <div class="section package">
         <div class="container">
-          <ul class="package__list">
-            <li class="package__item">
-              <div class="package__item-present">
-                <div class="package__item-present__head">
-                  <h3 class="package__item-title">Начальный</h3>
+          <div class="package__block">
+            <div class="package__slide-btn package__slide-btn--left"></div>
+            <div class="package__list">
+              <div>
+                <div class="package__item">
+                  <div class="package__item-present">
+                    <div class="package__item-present__head">
+                      <h3 class="package__item-title">Начальный</h3>
+                    </div>
+                    <div class="package__item-services__block">
+                      <ul class="package__item-services">
+                        <li class="package__item-service">Разработка сайта</li>
+                        <li class="package__item-service">SEO</li>
+                      </ul>
+                      <ul class="package__item-services_unavailable">
+                        <li class="package__item-service">SMM</li>
+                        <li class="package__item-service">Контент-план</li>
+                      </ul>
+                    </div>
+                    <p class="package__price">от <span>69 000</span> руб.</p>
+                    <p class="package__date">за 1 месяц</p>
+                    <div class="btn package__btn">Подробнее</div>
+                  </div>
+                  <div class="package__item-content">
+                    <ul class="package__item-content__list">
+                      <li class="package__item-content__item">Разработка сайта, которая включает в себя создание
+                        логотипа,
+                        фирменного стиля, верстку, настройку, тестирование, а также его запуск</li>
+                      <li class="package__item-content__item">SEO - поисковая оптимизация (для поднятия позиции сайта
+                        в
+                        результатах выдачи поиска)</li>
+                    </ul>
+                    <div class="btn package__form-btn">Связаться</div>
+                    <div class="package__close-btn"></div>
+                  </div>
                 </div>
-                <div class="package__item-services__block">
-                  <ul class="package__item-services">
-                    <li class="package__item-service">Разработка сайта</li>
-                    <li class="package__item-service">SEO</li>
-                  </ul>
-                  <ul class="package__item-services_unavailable">
-                    <li class="package__item-service">SMM</li>
-                    <li class="package__item-service">Контент-план</li>
-                  </ul>
+              </div>
+              <div>
+                <div class="package__item">
+                  <div class="package__item-present">
+                    <div class="package__item-present__head">
+                      <h3 class="package__item-title">Средний</h3>
+                    </div>
+                    <div class="package__item-services__block">
+                      <ul class="package__item-services">
+                        <li class="package__item-service">Разработка сайта</li>
+                        <li class="package__item-service">SEO</li>
+                        <li class="package__item-service">SMM</li>
+                      </ul>
+                      <ul class="package__item-services_unavailable">
+                        <li class="package__item-service">Контент-план</li>
+                      </ul>
+                    </div>
+                    <p class="package__price">от <span>129 990</span> руб.</p>
+                    <p class="package__date">За 1 месяц</p>
+                    <div class="btn package__btn">Подробнее</div>
+                  </div>
+                  <div class="package__item-content">
+                    <ul class="package__item-content__list">
+                      <li class="package__item-content__item">Разработка сайта, которая включает в себя создание
+                        логотипа,
+                        фирменного стиля, верстку, настройку, тестирование, а также его запуск</li>
+                      <li class="package__item-content__item">SEO - поисковая оптимизация (для поднятия позиции сайта
+                        в
+                        результатах выдачи поиска)</li>
+                      <li class="package__item-content__item">SMM - ведение социальных сетей</li>
+                    </ul>
+                    <div class="btn package__form-btn">Связаться</div>
+                    <div class="package__close-btn"></div>
+                  </div>
                 </div>
-                <p class="package__price">от <span>69 000</span> руб.</p>
-                <p class="package__date">за 1 месяц</p>
-                <div class="btn package__btn">Подробнее</div>
               </div>
-              <div class="package__item-content">
-                <ul class="package__item-content__list">
-                  <li class="package__item-content__item">Разработка сайта, которая включает в себя создание логотипа,
-                    фирменного стиля, верстку, настройку, тестирование, а также его запуск</li>
-                  <li class="package__item-content__item">SEO - поисковая оптимизация (для поднятия позиции сайта в
-                    результатах выдачи поиска)</li>
-                </ul>
-                <div class="btn package__form-btn">Связаться</div>
-              </div>
-            </li>
-            <li class="package__item">
-              <div class="package__item-present">
-                <div class="package__item-present__head">
-                  <h3 class="package__item-title">Средний</h3>
+              <div>
+                <div class="package__item">
+                  <div class="package__item-present">
+                    <div class="package__item-present__head">
+                      <h3 class="package__item-title">Полный</h3>
+                    </div>
+                    <ul class="package__item-services">
+                      <li class="package__item-service">Разработка сайта</li>
+                      <li class="package__item-service">SEO</li>
+                      <li class="package__item-service">SMM</li>
+                      <li class="package__item-service">Контент-план</li>
+                    </ul>
+                    <p class="package__price">от <span>199 990</span> руб.</p>
+                    <p class="package__date">за 2 месяца</p>
+                    <div class="btn package__btn">Подробнее</div>
+                  </div>
+                  <div class="package__item-content">
+                    <ul class="package__item-content__list">
+                      <li class="package__item-content__item">Разработка сайта, которая включает в себя создание
+                        логотипа,
+                        фирменного стиля, верстку, настройку, тестирование, а также его запуск</li>
+                      <li class="package__item-content__item">SEO - поисковая оптимизация (для поднятия позиции сайта
+                        в
+                        результатах выдачи поиска)</li>
+                      <li class="package__item-content__item">SMM - ведение социальных сетей</li>
+                      <li class="package__item-content__item">Контент-план - 10 SEO оптимизированных статей</li>
+                      <li class="package__item-content__item">Реклама Яндекс</li>
+                    </ul>
+                    <div class="btn package__form-btn">Связаться</div>
+                    <div class="package__close-btn"></div>
+                  </div>
                 </div>
-                <div class="package__item-services__block">
-                  <ul class="package__item-services">
-                    <li class="package__item-service">Разработка сайта</li>
-                    <li class="package__item-service">SEO</li>
-                    <li class="package__item-service">SMM</li>
-                  </ul>
-                  <ul class="package__item-services_unavailable">
-                    <li class="package__item-service">Контент-план</li>
-                  </ul>
-                </div>
-                <p class="package__price">от <span>129 990</span> руб.</p>
-                <p class="package__date">За 1 месяц</p>
-                <div class="btn package__btn">Подробнее</div>
               </div>
-              <div class="package__item-content">
-                <ul class="package__item-content__list">
-                  <li class="package__item-content__item">Разработка сайта, которая включает в себя создание логотипа,
-                    фирменного стиля, верстку, настройку, тестирование, а также его запуск</li>
-                  <li class="package__item-content__item">SEO - поисковая оптимизация (для поднятия позиции сайта в
-                    результатах выдачи поиска)</li>
-                  <li class="package__item-content__item">SMM - ведение социальных сетей</li>
-                </ul>
-                <div class="btn package__form-btn">Связаться</div>
-              </div>
-            </li>
-            <li class="package__item">
-              <div class="package__item-present">
-                <div class="package__item-present__head">
-                  <h3 class="package__item-title">Полный</h3>
-                </div>
-                <ul class="package__item-services">
-                  <li class="package__item-service">Разработка сайта</li>
-                  <li class="package__item-service">SEO</li>
-                  <li class="package__item-service">SMM</li>
-                  <li class="package__item-service">Контент-план</li>
-                </ul>
-                <p class="package__price">от <span>199 990</span> руб.</p>
-                <p class="package__date">за 2 месяца</p>
-                <div class="btn package__btn">Подробнее</div>
-              </div>
-              <div class="package__item-content">
-                <ul class="package__item-content__list">
-                  <li class="package__item-content__item">Разработка сайта, которая включает в себя создание логотипа,
-                    фирменного стиля, верстку, настройку, тестирование, а также его запуск</li>
-                  <li class="package__item-content__item">SEO - поисковая оптимизация (для поднятия позиции сайта в
-                    результатах выдачи поиска)</li>
-                  <li class="package__item-content__item">SMM - ведение социальных сетей</li>
-                  <li class="package__item-content__item">Контент-план - 10 SEO оптимизированных статей</li>
-                  <li class="package__item-content__item">Реклама Яндекс</li>
-                </ul>
-                <div class="btn package__form-btn">Связаться</div>
-              </div>
-            </li>
+            </div>
+            <ul class="package__pagination"></ul>
+            <div class="package__slide-btn package__slide-btn--right"></div>
+          </div>
+          
           </ul>
         </div>
       </div>
@@ -240,42 +298,46 @@
             <img src="./images/logo/webhana-logo.png" alt="Логотип компании">
           </div>
           <nav class="footer__pages">
-            <p class="footer__name">Menu</p>
+            <p class="footer__name">Меню</p>
             <a href="#" class="footer__menu-link">Главная</a>
             <a href="#" class="footer__menu-link">Статьи</a>
             <a href="#" class="footer__menu-link">Услуги</a>
           </nav>
           <nav class="footer__services">
             <p class="footer__name">Услуги</p>
-            <a href="#" class="footer__menu-link">Разработка</a>
-            <a href="#" class="footer__menu-link">Продвижение</a>
-            <a href="#" class="footer__menu-link">Дизайн</a>
+            <a href="./develop.html" class="footer__menu-link">Разработка</a>
+            <a href="./analitic.html" class="footer__menu-link">Продвижение</a>
+            <a href="./design.html" class="footer__menu-link">Дизайн</a>
           </nav>
           <div class="footer__contacts">
             <p class="footer__name">Контакты</p>
             <p class="footer__contacts-name">WhatsApp</p>
             <a href="tel:79998882323" class="footer__contacts-link">+7(999)888-23-23</a>
             <p class="footer__contacts-name">Telegram</p>
-            <a href="#" class="footer__contacts-link">@WebHana</a>
+            <a href="https://t.me/WebHana" target="_blank" class="footer__contacts-link">@WebHana</a>
             <p class="footer__contacts-name">Email</p>
-            <a href="#" class="footer__contacts-link">webhana@gmail.com</a>
+            <a href="mailto:webhana@gmail.com" target="_blank" class="footer__contacts-link">webhana@gmail.com</a>
           </div>
           <div class="footer__address">
             <p class="footer__name">Контакты</p>
             <p class="footer__address-name">Адрес офиса</p>
-            <a href="#" class="footer__contacts-link">г. Уфа, ул. Мира 14</a>
-            <a href="#" class="footer__contacts-link">Фабрика будущего</a>
+            <a href="https://yandex.ru/maps/-/CDaGQTnZ" target="_blank" class="footer__contacts-link">г. Уфа, ул. Мира 14</a>
+            <a href="https://xn----8sbeeykbzfbw5bn.xn--p1ai/" target="_blank" class="footer__contacts-link">Фабрика будущего</a>
             <p class="footer__address-name">Часы работы</p>
             <a href="#" class="footer__contacts-link">пн-вс: 10:00 - 22:00</a>
           </div>
         </div>
-        <div class="footer__map"></div>
+        <div class="footer__map">
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec0fa7397392d3658eaddd4291a2cd429caceb027272384516753ead3d5cd49a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        </div>
       </div>
     </footer>
   </div>
 
-
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="js/main.min.js"></script>
+
 </body>
 
 </html>

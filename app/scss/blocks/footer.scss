@@ -4,6 +4,10 @@
   .container {
     display: flex;
     max-width: 1412px;
+
+    @include tablets {
+      max-width: 100%;
+    }
   }
 
   &__left {
@@ -11,20 +15,50 @@
     display: flex;
     justify-content: space-between;
     padding: 40px 62px 40px 0;
+
+    @include tablets {
+      padding: 32px 0;
+    }
+
+    @include phones {
+      flex-wrap: wrap;
+    }
   }
 
   &__map {
+    padding: 10px;
     flex: 5;
+
+    @include tablets {
+      display: none;
+    }
   }
 
   &__pages,
   &__services {
     display: flex;
     flex-direction: column;
+
+    @include phones {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__pages,
+  &__services,
+  &__contacts,
+  &__address {
+    @include phones {
+      width: 50%;
+    }
   }
 
   &__logo-wrapper {
     max-width: 145px;
+
+    @include phones {
+      display: none;
+    }
   }
 
   &__address {
@@ -58,7 +92,7 @@
     margin-bottom: 25px;
   }
 
-  &__contacts-link { 
+  &__contacts-link {
     display: block;
     text-decoration: underline;
     font-weight: 300;

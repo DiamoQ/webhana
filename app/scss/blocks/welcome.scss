@@ -1,15 +1,40 @@
-.welcome {   
+.welcome {
   margin-top: 84px;
   padding-top: 88px;
   padding-bottom: 140px;
   position: relative;
 
+  @include phones {
+    margin-top: 48px;
+    padding-top: 68px;
+    padding-bottom: 0px;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
     position: relative;
-  }
 
+    @include tablets {
+      height: calc(100vh - 172px);
+      justify-content: space-around;
+    }
+
+    @include phones {
+      height: calc(100vh - 116px);
+      &::after {
+        content: " ";
+        width: calc(100% - 48px);
+        padding: 0 24px;
+        height: 1px;
+        background: $border-black;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
 
   &::before {
     content: " ";
@@ -24,6 +49,17 @@
     top: 50%;
     right: 100%;
     transform: translate(50%, -50%);
+
+    @include tablets {
+      width: 528px;
+      height: 523px;
+    }
+
+    @include phones {
+      width: 445px;
+      height: 440px;
+      transform: translate(50%, -135%);
+    }
   }
 
   &::after {
@@ -38,6 +74,18 @@
     position: absolute;
     bottom: -93px;
     right: -215px;
+
+    @include tablets {
+      width: 456px;
+      height: 445px;
+      right: -90px;
+    }
+
+    @include phones {
+      width: 310px;
+      height: 292px;
+      bottom: 35%;
+    }
   }
 
   &__title {
@@ -46,32 +94,140 @@
     font-weight: 700;
     line-height: 110%; /* 88px */
     margin-bottom: 74px;
+
+    &--develop {
+      max-width: 90%;
+    }
+
+    @include tablets {
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 64px; /* 90.625% */
+      letter-spacing: -1.28px;
+      margin-bottom: 0;
+    }
+
+    @include phones {
+      font-size: 40px;
+      line-height: 40px; /* 90% */
+      letter-spacing: -0.8px;
+      margin-bottom: 60px;
+    }
   }
 
   &__text {
     font-size: 48px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 130%; /* 62.4px */
     margin-bottom: 199px;
+    max-width: 70%;
+
+    &--bold {
+      font-weight: 500;
+    }
+
+    @include tablets {
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 110%; /* 39.6px */
+      max-width: 394px;
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+
+    @include phones {
+      font-size: 16px;
+      line-height: 20px; /* 125% */
+      max-width: 200px;
+      text-align: right;
+    }
+  }
+
+  &__text-tablet {
+    display: none;
+
+    @include tablets {
+      display: block;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 130%; /* 46.8px */
+      max-width: 453px;
+    }
+
+    @include phones {
+      font-size: 20px;
+      max-width: 212px;
+    }
   }
 
   &__btn {
-    display: flex;
-    width: 580px;
-    height: 60px;
-    padding: 18px 0;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    padding: 18px 26px;
     border-radius: 18px;
-    background: var(--orange, #FF8154);
-    color: var(--text3, #F5F5F5);
+    background: var(--orange, #ff8154);
+    color: var(--text3, #f5f5f5);
     text-align: center;
     font-size: 32px;
     font-weight: 600;
     line-height: 31.5px; /* 98.438% */
     letter-spacing: -0.64px;
+    width: fit-content;
     cursor: pointer;
+
+    @include tablets {
+      display: none;
+    }
+  }
+
+  &__btn--tablet {
+    display: none;
+
+    @include tablets {
+      display: block;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 1.3px;
+      width: 183px;
+      height: 47px;
+      padding: 8.932px 40px;
+      flex-shrink: 0;
+      margin-right: auto;
+      margin-left: auto;
+      z-index: 3;
+      margin-bottom: 50px;
+    }
+  }
+
+  .down-button {
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../../images/icons/down-button.svg");
+    background-size: contain;
+    animation: move 2s infinite ease-in-out;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+
+    @include tablets {
+      display: block;
+    }
+  }
+
+  @keyframes move {
+    0% {
+      bottom: 10px;
+    }
+    50% {
+      bottom: 14px;
+    }
+    100% {
+      bottom: 10px;
+    }
   }
 }
 
@@ -82,4 +238,11 @@
   position: absolute;
   top: -88px;
   right: 0;
+
+  @include phones {
+    width: 54px;
+    height: 54px;
+    top: -57px;
+    background-size: contain;
+  }
 }

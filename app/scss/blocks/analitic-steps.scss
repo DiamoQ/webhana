@@ -1,0 +1,126 @@
+.analitic-steps {
+  padding: 96px 0;
+
+  @include tablets {
+    padding: 60px 0;
+  }
+
+  @include phones {
+    padding: 32px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include phones {
+      padding-bottom: 48px;
+      max-height: initial;
+
+      &::after {
+        content: " ";
+        width: calc(100% - 48px);
+        padding: 0 24px;
+        height: 1px;
+        background: $border-black;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    width: 100%;
+
+    @include tablets {
+      flex-direction: column;
+    }
+
+    &-title {
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 75.5px; /* 117.969% */
+      margin-bottom: 66px;
+
+      @include tablets {
+        font-size: 44px;
+        margin-bottom: 26px;
+        line-height: 55.5px; /* 126.136% */
+      }
+
+      @include phones {
+        font-size: 32px;
+        line-height: 39.5px; /* 123.438% */
+      }
+    }
+  }
+
+  &__left,
+  &__right {
+    flex: 1;
+  }
+
+  &__right {
+    padding-left: 100px;
+
+    @include tablets {
+      padding-left: 0px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin-bottom: 32px;
+    position: relative;
+    padding-left: 68px;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 44px; /* 110% */
+    color: $text2;
+
+    @include tablets {
+      width: 100%;
+      margin-bottom: 25px;
+      font-size: 32px;
+      line-height: 38px; /* 118.75% */
+      padding-left: 40px;
+    }
+
+    @include phones {
+      font-size: 22px;
+      line-height: 22px; /* 100% */
+      margin-bottom: 16px;
+      padding-left: 30px;
+    }
+
+    &::before {
+      content: " ";
+      background: $purple;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+
+      @include tablets {
+        width: 22px;
+        height: 22px;
+      }
+
+      @include phones {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

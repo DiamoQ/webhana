@@ -1,4 +1,3 @@
-
 html {
   height: 100%;
   font-size: $baseFontSize;
@@ -48,6 +47,20 @@ body {
   margin: 0px auto;
   position: relative;
   width: 100%;
+
+  @include laptops {
+    max-width: $laptops;
+    padding: 0 47px;
+  }
+  @include tablets {
+    max-width: $tablets;
+    padding: 0 47px;
+  }
+
+  @include phones {
+    max-width: $phones;
+    padding: 0 24px;
+  }
 }
 
 .section-title {
@@ -65,6 +78,12 @@ body {
   line-height: 58.087px; /* 181.522% */
   letter-spacing: -0.64px;
   cursor: pointer;
+
+  @include tablets {
+    font-size: 24px;
+    line-height: 42.345px; /* 176.439% */
+    letter-spacing: -0.48px;
+  }
 }
 
 .btn-to-up {
@@ -80,4 +99,8 @@ body {
   writing-mode: tb-rl;
   transform: rotate(180deg);
   text-align: center;
+}
+
+.orange {
+  color: $orange;
 }

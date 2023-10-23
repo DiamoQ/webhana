@@ -1,0 +1,128 @@
+.develop-steps {
+  padding: 73px 0;
+
+  @include tablets {
+    padding: 60px 0;
+  }
+
+  @include phones {
+    padding: 32px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 981px;
+
+    @include tablets {
+      max-width: 100%;
+    }
+
+    @include phones {
+      padding-bottom: 48px;
+      max-height: initial;
+
+      &::after {
+        content: " ";
+        width: calc(100% - 48px);
+        padding: 0 24px;
+        height: 1px;
+        background: $border-black;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    width: 100%;
+
+    &-title {
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 75.5px; /* 117.969% */
+      margin-bottom: 66px;
+
+      @include tablets {
+        font-size: 44px;
+        line-height: 60px; /* 136.364% */
+        margin-bottom: 26px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablets {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 32px;
+
+    @include tablets {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    &--pc {
+      @include tablets {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include tablets {
+        display: flex;
+      }
+    }
+
+    p {
+      color: $text2;
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 44px; /* 110% */
+
+      @include tablets {
+        font-size: 32px;
+        line-height: 39.5px; /* 123.438% */
+      }
+
+      @include phones {
+        font-size: 22px;
+        line-height: 24px; /* 109.091% */
+      }
+    }
+  }
+
+  &__number {
+    margin-right: 37px;
+    color: $purple;
+    font-size: 106px;
+    font-weight: 900;
+    line-height: 75.5px; /* 71.226% */
+
+    @include tablets {
+      font-size: 68px;
+      line-height: 90px; /* 132.353% */
+      margin-right: 20px;
+    }
+
+    @include phones {
+      font-size: 55px;
+      line-height: 75.5px; /* 137.273% */
+    }
+  }
+}

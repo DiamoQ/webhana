@@ -1,6 +1,10 @@
 .present {
   padding: 73px 0;
 
+  @include phones {
+    display: none;
+  }
+
   &__block {
     border-radius: 60px;
     background: $background-black;
@@ -11,6 +15,14 @@
     align-items: center;
     min-height: 871px;
     height: 100%;
+
+    @include tablets {
+      display: flex;
+      min-height: 740px;
+      padding: 52px 60px;
+      gap: 24px;
+      border-radius: 44px;
+    }
   }
 
   &__block-left,
@@ -29,6 +41,10 @@
     font-style: normal;
     font-weight: 600;
     line-height: 130%; /* 62.4px */
+
+    @include tablets {
+      font-size: 36px;
+    }
   }
 
   &__text {
@@ -36,5 +52,63 @@
     font-size: 32px;
     font-weight: 300;
     line-height: 130%; /* 41.6px */
+
+    @include tablets {
+      font-size: 24px;
+    }
+  }
+}
+
+.present--tablet {
+  @include phones {
+    display: block;
+  }
+
+  .container {
+    @include phones {
+      padding-bottom: 48px;
+      max-height: initial;
+
+      &::after {
+        content: " ";
+        width: calc(100% - 48px);
+        padding: 0 24px;
+        height: 1px;
+        background: $border-black;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .present__block {
+    @include tablets-xs {
+      flex-direction: column;
+      padding: 40px;
+      min-height: initial;
+      gap: 20px;
+    }
+
+    &-left,
+    &-right {
+      @include tablets-xs {
+        gap: 20px;
+      }
+    }
+  }
+
+  .present__subtitle {
+    @include tablets-xs {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  .present__text {
+    @include tablets-xs {
+      font-size: 16px;
+    }
   }
 }

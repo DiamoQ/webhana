@@ -3,12 +3,37 @@
   padding: 71px 0;
   position: relative;
 
+  @include tablets {
+    padding: 120px 0 205px 0;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+
+  @include phones {
+    padding: 48px 0 0;
+    margin-bottom: 48px;
+    overflow: visible;
+  }
+
   &::before {
     content: url(../../images/backgrounds/main-5.png);
     position: absolute;
     top: -239px;
     left: 0px;
     z-index: -2;
+
+    @include tablets {
+      display: none;
+    }
+
+    @include phones {
+      content: url(../../images/backgrounds//main-5-phone.png);
+      position: absolute;
+      display: block;
+      top: -265px;
+      left: 0px;
+      z-index: -2;
+    }
   }
 
   &::after {
@@ -17,12 +42,42 @@
     top: -27px;
     right: 0;
     z-index: -2;
+
+    @include tablets {
+      bottom: -665px;
+      top: initial;
+    }
+
+    @include phones {
+      content: url(../../images/backgrounds//main-6-phone.png);
+      position: absolute;
+      bottom: -135px;
+      right: 0;
+      z-index: -2;
+    }
   }
   
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include phones {
+      padding-bottom: 48px;
+      max-height: initial;
+
+      &::after {
+        content: " ";
+        width: calc(100% - 48px);
+        padding: 0 24px;
+        height: 1px;
+        background: $border-black;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   &-title {
@@ -32,6 +87,18 @@
     font-weight: 600;
     line-height: 160px; /* 266.667% */
     letter-spacing: -1.2px;
+
+    @include tablets {
+      font-size: 48px;
+      letter-spacing: -0.96px;
+    }
+
+    @include phones {
+      font-size: 32px;
+      line-height: 100%; /* 32px */
+      letter-spacing: -0.64px;
+      margin-bottom: 20px;
+    }
   }
 
   &-text {
@@ -42,6 +109,18 @@
     line-height: 50px;
     letter-spacing: -0.8px;
     margin-bottom: 100px;
+
+    @include tablets {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    @include phones {
+      font-size: 20px;
+      line-height: 100%; /* 20px */
+      letter-spacing: -0.4px;
+      margin-bottom: 40px;
+    }
 
     span.purple {
       color: $purple;
@@ -60,12 +139,44 @@
     flex-direction: column;
     gap: 40px;
     position: relative;
-    justify-content: space-around
+    justify-content: space-around;
+
+    @include tablets {
+      padding: 44px 48px 60px 48px;
+    }
+
+    @include phones {
+      gap: 40px;
+      height: initial;
+    }
+
+    &::before {
+      @include tablets {
+        content: url(../../images/backgrounds/main-4-tablet.png);
+        transform: rotateZ(90deg);
+        padding: 120px 0 205px;
+        position: absolute;
+        top: -330px;
+        left: 100px;
+        z-index: -1;
+      }
+
+      @include phones {
+        content: " ";
+        transform: none;
+        padding: 0;
+        position: absolute;
+      }
+    }
   }
 
   &-top {
     display: flex;
     gap: 40px;
+
+    @include phones {
+      flex-direction: column;
+    }
   }
 
   .form__input {
@@ -78,6 +189,12 @@
     background: transparent;
     border: none;
     border-bottom: 1px solid $text3;
+
+    @include phones {     
+      font-size: 16px;
+      line-height: 100%; /* 16px */
+      letter-spacing: -0.32px;
+    }
 
     &.name {
       max-width: 360px;
@@ -108,5 +225,9 @@
     border-radius: 18px;
     background: $orange;
     border: none;
+
+    @include phones {
+      bottom: -25px;
+    }
   }
 }

@@ -3,17 +3,35 @@ $baseFontSize: 16px;
 
 //breakpoints
 
+$laptops: 1190px;
 $tablets: 768px;
+$tablets-xs: 575.98px;
 $phones: 480px;
+$phones-s: 455px;
+$phones-xs: 390px;
 
 //colors
 
 $background-black: #1F1F1F;
+$border-black: #101010;
 $orange: #FF8154;
 $text: #181602;
+$text2: #535353;
 $text3: #F5F5F5;
 $purple: #722ED1;
 $yellow: #FFBA33;
+
+@mixin phones-xs{
+  @media screen and (max-width: $phones-xs){
+    @content;
+  }
+}
+
+@mixin phones-s{
+  @media screen and (max-width: $phones-s){
+    @content;
+  }
+}
 
 @mixin phones{
   @media screen and (max-width: $phones){
@@ -21,8 +39,20 @@ $yellow: #FFBA33;
   }
 }
 
+@mixin tablets-xs{
+  @media screen and (max-width: $tablets-xs){
+    @content;
+  }
+}
+
 @mixin tablets{
   @media screen and (max-width: $tablets){
+    @content;
+  }
+}
+
+@mixin laptops{
+  @media screen and (max-width: $laptops){
     @content;
   }
 }

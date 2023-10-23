@@ -2,12 +2,54 @@
   padding: 132px 0;
   position: relative;
 
+  @include tablets {
+    padding: 60px 0;
+  }
+
+  @include phones {
+    padding: 48px 0 0;
+  }
+
   &::before {
     content: url(../../images/backgrounds/main-3.png);
     position: absolute;
     top: -200px;
     left: 0px;
     z-index: -2;
+
+    @include tablets {
+      & {
+        content: url(../../images/backgrounds/main-3-tablet.png);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    @include phones {
+      & {
+        content: url(../../images/backgrounds/main-3-mobile.png);
+        top: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .container {
+    @include phones {
+      padding-bottom: 48px;
+
+      &::after {
+        content: " ";
+        width: calc(100% - 48px);
+        padding: 0 24px;
+        height: 1px;
+        background: $border-black;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   &__block {
@@ -17,28 +59,141 @@
   }
 
   &__slider {
-    display: flex;
     position: relative;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    height: 640px;
+
+    @include tablets {
+      height: initial;
+    }
+
+    .slick-list {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 48px;
+
+      @include tablets {
+        margin-bottom: 32px;
+        height: initial;
+      }
+
+      @include phones {
+        margin-bottom: 20px;
+      }
+    }
+
+    .slick-track {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      display: flex;
+    }
   }
 
   &__btn {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 76px;
+    cursor: pointer;
+    z-index: 2;
+
+    @include tablets {
+      top: 50%;
+      width: 22px;
+      height: 38px;
+      transform: translateY(calc(-50% - 29px));
+    }
   }
 
-  &__slide {
+  &__btn--right {
+    content: url(../../images/icons/nextArrow.svg);
+    right: -72px;
+
+    @include tablets {
+      right: 85px;
+    }
+
+    @include phones {
+      right: 63px;
+    }
+
+    @include phones-s {
+      right: 35px;
+    }
+
+    @include phones-xs {
+      right: 15px;
+    }
+  }
+
+  &__btn--left {
+    content: url(../../images/icons/prevArrow.svg);
+    left: -57px;
+
+    @include tablets {
+      left: 85px;
+    }
+
+    @include phones {
+      left: 63px;
+    }
+
+    @include phones-s {
+      left: 35px;
+    }
+
+    @include phones-xs {
+      left: 15px;
+    }
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    height: initial;
+    transition: max-height 1.2s ease;
+  }
+
+  .services__slide {
     display: block;
     flex: 1 1 auto;
-    height: 560px;
     max-width: 360px;
-    width: 100%;
+    min-height: 560px;
+    max-height: 560px;
     border-radius: 60px;
+    transition:
+      max-height 1.2s ease,
+      min-height 1.2s ease;
     background:
       linear-gradient(0deg, rgba(18, 17, 17, 0.6) 0%, rgba(18, 17, 17, 0.6) 100%),
       url(<path-to-image>),
       lightgray -47.535px -197.458px / 132.926% 171.805% no-repeat;
+
+    @include tablets {
+      max-height: 265px;
+      min-height: 265px;
+      width: 490px;
+      max-width: 490px;
+      border-radius: 44px;
+    }
+
+    @include phones {
+      max-height: 460px;
+      min-height: 460px;
+      width: 256px;
+      max-width: 256px;
+      border-radius: 44px;
+    }
+
+    &:hover {
+      .services__slide-content::after {
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: background-color .4s ease;
+      }
+    }
 
     &-head {
       height: 97px;
@@ -50,6 +205,16 @@
       justify-content: center;
       align-items: center;
       align-self: stretch;
+
+      @include tablets {
+        border-top-right-radius: 44px;
+        border-top-left-radius: 44px;
+        height: 71px;
+      }
+
+      @include phones {
+        height: 42px;
+      }
     }
 
     &-title {
@@ -57,6 +222,14 @@
       font-size: 32px;
       font-weight: 600;
       line-height: 56.7px;
+
+      @include tablets {
+        line-height: 41.334px; /* 129.17% */
+      }
+
+      @include phones {
+        font-size: 22px;
+      }
     }
 
     &-content {
@@ -64,9 +237,41 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      position: relative;
       text-align: center;
       height: calc(100% - 97px);
       padding: 32px 20px;
+
+      @include tablets {
+        padding: 12px 24px;
+        height: calc(100% - 71px);
+        text-align: left;
+      }
+
+      @include phones {
+        padding: 20px 15px;
+        height: calc(100% - 42px);
+      }
+
+      &::after {
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        background-blend-mode: multiply;
+        z-index: 0;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+        transition: background-color .4s ease;
+
+        @include tablets {
+          border-bottom-left-radius: 44px;
+          border-bottom-right-radius: 44px;
+        }
+      }
     }
 
     &-text {
@@ -74,6 +279,16 @@
       font-size: 24px;
       font-weight: 400;
       line-height: 110%; /* 26.4px */
+      z-index: 2;
+
+      @include tablets {
+        font-size: 20px;
+        font-weight: 300;
+      }
+
+      @include phones {
+        font-size: 16px;
+      }
     }
 
     .service__btn {
@@ -85,11 +300,79 @@
       gap: 6px;
       border-radius: 18px;
       background: $purple;
+      z-index: 2;
+
+      @include tablets {
+        width: 178px;
+        height: 43px;
+        gap: 4.4px;
+        border-radius: 12px;
+      }
+
+      @include phones {
+        width: 160px;
+        height: 40px;
+      }
     }
   }
 
-  &__slide.active {
+  .slick-active.slick-center .services__slide {
     max-width: 400px;
-    height: 640px;
-  } 
+    max-height: 640px;
+    min-height: 640px;
+    transition:
+      max-height 1.2s ease,
+      min-height 1.2s ease;
+
+    @include tablets {
+      min-width: 490px;
+      max-width: 490px;
+      min-height: 265px;
+      max-height: 265px;
+      border-radius: 44px;
+    }
+
+    @include phones {
+      min-width: 256px;
+      max-width: 256px;
+      min-height: 460px;
+      max-height: 460px;
+    }
+  }
+
+  .slick-active.slick-center {
+    transition:
+      max-height 1.2s ease,
+      min-height 1.2s ease;
+  }
+
+  .services__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    li {
+      width: 10px;
+      height: 10px;
+      background-color: $text2;
+      cursor: pointer;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+
+      button {
+        visibility: hidden;
+      }
+    }
+
+    li.slick-active {
+      width: 16px;
+      height: 16px;
+
+      button {
+        visibility: hidden;
+      }
+    }
+  }
 }

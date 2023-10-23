@@ -11,7 +11,7 @@
   }
 
   &::before {
-    content: url(../../images/backgrounds/main-3.png);
+    content: url(../images/backgrounds/main-3.png);
     position: absolute;
     top: -200px;
     left: 0px;
@@ -19,7 +19,7 @@
 
     @include tablets {
       & {
-        content: url(../../images/backgrounds/main-3-tablet.png);
+        content: url(../images/backgrounds/main-3-tablet.png);
         top: 50%;
         transform: translateY(-50%);
       }
@@ -27,7 +27,7 @@
 
     @include phones {
       & {
-        content: url(../../images/backgrounds/main-3-mobile.png);
+        content: url(../images/backgrounds/main-3-mobile.png);
         top: 0;
         transform: translateY(-50%);
       }
@@ -109,7 +109,7 @@
   }
 
   &__btn--right {
-    content: url(../../images/icons/nextArrow.svg);
+    content: url(../images/icons/nextArrow.svg);
     right: -72px;
 
     @include tablets {
@@ -130,7 +130,7 @@
   }
 
   &__btn--left {
-    content: url(../../images/icons/prevArrow.svg);
+    content: url(../images/icons/prevArrow.svg);
     left: -57px;
 
     @include tablets {

@@ -16,7 +16,7 @@
   }
 
   &::before {
-    content: url(../../images/backgrounds/main-5.png);
+    content: url(../images/backgrounds/main-5.png);
     position: absolute;
     top: -239px;
     left: 0px;
@@ -27,7 +27,7 @@
     }
 
     @include phones {
-      content: url(../../images/backgrounds//main-5-phone.png);
+      content: url(../images/backgrounds//main-5-phone.png);
       position: absolute;
       display: block;
       top: -265px;
@@ -37,7 +37,7 @@
   }
 
   &::after {
-    content: url(../../images/backgrounds/main-6.png);
+    content: url(../images/backgrounds/main-6.png);
     position: absolute;
     top: -27px;
     right: 0;
@@ -49,7 +49,7 @@
     }
 
     @include phones {
-      content: url(../../images/backgrounds//main-6-phone.png);
+      content: url(../images/backgrounds//main-6-phone.png);
       position: absolute;
       bottom: -135px;
       right: 0;
@@ -152,7 +152,7 @@
 
     &::before {
       @include tablets {
-        content: url(../../images/backgrounds/main-4-tablet.png);
+        content: url(../images/backgrounds/main-4-tablet.png);
         transform: rotateZ(90deg);
         padding: 120px 0 205px;
         position: absolute;

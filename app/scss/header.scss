@@ -131,7 +131,7 @@
     position: relative;
     line-height: 26px;
     &--mail::after {
-      content: url(../../images/icons/mail.svg);
+      content: url(../images/icons/mail.svg);
       display: block;
       position: absolute;
       right: -55px;
@@ -140,7 +140,7 @@
     }
 
     &--tel::after {
-      content: url(../../images/icons/phone-icon.svg);
+      content: url(../images/icons/phone-icon.svg);
       display: block;
       position: absolute;
       right: -55px;

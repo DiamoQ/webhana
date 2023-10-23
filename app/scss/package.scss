@@ -33,7 +33,7 @@
   }
 
   &::before {
-    content: url(../../images/backgrounds/main-4.png);
+    content: url(../images/backgrounds/main-4.png);
     border-radius: 50%;
     position: absolute;
     top: -83px;
@@ -42,7 +42,7 @@
 
     @include tablets {
       & {
-        content: url(../../images/backgrounds/main-4-tablet.png);
+        content: url(../images/backgrounds/main-4-tablet.png);
         top: calc(50% - 11px);
         transform: translateY(-50%);
         right: 0;
@@ -52,7 +52,7 @@
 
     @include phones {
       & {
-        content: url(../../images/backgrounds/main-4-phone.png);
+        content: url(../images/backgrounds/main-4-phone.png);
         top: 5%;
         transform: translateY(-50%);
         right: 0;
@@ -247,7 +247,7 @@
   &__close-btn {
     width: 56px;
     height: 56px;
-    background-image: url("../../images/icons/packageClose.svg");
+    background-image: url("../images/icons/packageClose.svg");
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -351,7 +351,7 @@
 
   &__slide-btn--right {
     @include tablets {
-      content: url(../../images/icons/nextArrow.svg);
+      content: url(../images/icons/nextArrow.svg);
       right: 150px;
     }
 
@@ -370,7 +370,7 @@
 
   &__slide-btn--left {
     @include tablets {
-      content: url(../../images/icons/prevArrow.svg);
+      content: url(../images/icons/prevArrow.svg);
       left: 150px;
     }
 

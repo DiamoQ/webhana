@@ -38,7 +38,7 @@
 
   &::before {
     content: " ";
-    background-image: url(../../images/backgrounds/main-1.png);
+    background-image: url(../images/backgrounds/main-1.png);
     background-repeat: no-repeat;
     background-position-x: right;
     background-size: auto 100%;
@@ -64,7 +64,7 @@
 
   &::after {
     content: " ";
-    background-image: url(../../images/backgrounds/main-2.png);
+    background-image: url(../images/backgrounds/main-2.png);
     background-repeat: no-repeat;
     background-position-x: right;
     background-size: 100%;
@@ -206,7 +206,7 @@
     height: 24px;
     margin-left: auto;
     margin-right: auto;
-    background-image: url("../../images/icons/down-button.svg");
+    background-image: url("../images/icons/down-button.svg");
     background-size: contain;
     animation: move 2s infinite ease-in-out;
     left: 50%;
@@ -234,7 +234,7 @@
 .logo__icon {
   width: 102px;
   height: 102px;
-  background-image: url(../../images/logo/webhana-logo-black.png);
+  background-image: url(../images/logo/webhana-logo-black.png);
   position: absolute;
   top: -88px;
   right: 0;

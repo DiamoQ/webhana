@@ -13,7 +13,7 @@
     gap: 28px;
     justify-content: center;
     align-items: center;
-    min-height: 871px;
+    min-height: 832px;
     height: 100%;
 
     @include tablets {
@@ -45,6 +45,10 @@
     @include tablets {
       font-size: 36px;
     }
+
+    &--white {
+      color: $text3;
+    }
   }
 
   &__text {
@@ -55,6 +59,10 @@
 
     @include tablets {
       font-size: 24px;
+    }
+
+    &--bold {
+      font-weight: 500;
     }
   }
 }

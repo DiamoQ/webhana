@@ -104,3 +104,17 @@ body {
 .orange {
   color: $orange;
 }
+
+.purple {
+  color: $purple;
+}
+
+a, 
+.button,
+.btn,
+.menu-tablet,
+.services__btn,
+.slick-arrow,
+button {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}

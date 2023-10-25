@@ -203,6 +203,10 @@
     &.contact {
       max-width: 544px;
     }
+
+    &._error {
+      box-shadow: 0 0 20px red;
+    }
   }
   
   input:focus, 

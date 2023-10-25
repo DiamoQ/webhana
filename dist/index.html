@@ -29,10 +29,10 @@
               <div class="menu__middle-line"></div>
               <div class="menu__bottom-line"></div>
               <nav class="menu__nav">
-                <a href="#" class="menu__nav-link">Главная</a>
-                <a href="#" class="menu__nav-link">Статьи</a>
-                <a href="#" class="menu__nav-link">Тарифы</a>
-                <a href="#" class="menu__nav-link">Связаться</a>
+                <a href="./index.html" class="menu__nav-link">Главная</a>
+                <a href="./develop.html" class="menu__nav-link">Разработка</a>
+                <a href="./analitic.html" class="menu__nav-link">Аналитика</a>
+                <a href="./design.html" class="menu__nav-link">SMM</a>
               </nav>
             </div>
             <div class="header__logo">
@@ -56,10 +56,10 @@
         </div>
       </div>
       <nav class="menu-tablet__nav">
-        <a href="#" class="menu-tablet__nav-link">Главная</a>
-        <a href="#" class="menu-tablet__nav-link">Статьи</a>
-        <a href="#" class="menu-tablet__nav-link">Тарифы</a>
-        <a href="#" class="menu-tablet__nav-link">Связаться</a>
+        <a href="./index.html" class="menu-tablet__nav-link">Главная</a>
+        <a href="./develop.html" class="menu-tablet__nav-link">Разработка</a>
+        <a href="./analitic.html" class="menu-tablet__nav-link">Аналитика</a>
+        <a href="./design.html" class="menu-tablet__nav-link">SMM</a>
       </nav>
     </header>
     <main>
@@ -68,13 +68,13 @@
           <h1 class="title welcome__title">Маркетинговая<br> веб-студия</h1>
           <p class="welcome__text welcome__text--bold">Наша цель - донести до клиента вашу ценность</p>
           <p class="welcome__text-tablet">Студия <b>WEBHANA</b> предлагает <b>комплексный</b> подход к маркетингу, интернет-рекламе, дизайну и продажам в режиме <b>одного окна</b>. </p>
-          <div class="btn welcome__btn">Получить бесплатную консультацию</div>
-          <div class="btn welcome__btn welcome__btn--tablet">Связаться</div>
-          <a href="#services" class="down-button"></a>
+          <a href="#formBlock"  class="btn welcome__btn">Получить бесплатную консультацию</a>
+          <a href="#formBlock" class="btn welcome__btn welcome__btn--tablet">Связаться</a>
+          <a href="#present" class="down-button"></a>
           <div class="logo__icon"></div>
         </div>
       </div>
-      <div class="section present">
+      <div class="section present present--tablet" id="present">
         <div class="container">
           <div class="present__block">
             <div class="present__block-left">
@@ -108,7 +108,7 @@
                   <div class="services__slide-content">
                     <p class="services__slide-text">Cоздадим эффективный и эстетичный сайт, который будет приносить
                       клиентов и прибыль, с учетом ваших пожеланий и целей</p>
-                    <div class="btn service__btn">Подробнее</div>
+                    <a href="./develop.html" class="btn service__btn">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -121,7 +121,7 @@
                     <p class="services__slide-text">Внедрим бизнес-аналитику, которая позволит вам точно узнать
                       эффективность и окупаемость ваших рекламных каналов до продаж и прибыли, отследить каждую копейку
                       рекламных расходов</p>
-                    <div class="btn service__btn">Подробнее</div>
+                    <a href="./analitic.html" class="btn service__btn">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@
                   <div class="services__slide-content">
                     <p class="services__slide-text">Поможем создать мощную медийную кампанию и целевой трафик на сайт, и
                       как следствие продажи с прибылью, с помощью контекстной рекламы</p>
-                    <div class="btn service__btn">Подробнее</div>
+                    <a href="./design.html" class="btn service__btn">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -145,7 +145,7 @@
                   <div class="services__slide-content">
                     <p class="services__slide-text">Поможем создать мощную медийную кампанию и целевой трафик на сайт, и
                       как следствие продажи с прибылью, с помощью контекстной рекламы</p>
-                    <div class="btn service__btn">Подробнее</div>
+                      <a href="./design.html" class="btn service__btn">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -271,12 +271,12 @@
           </ul>
         </div>
       </div>
-      <div class="section form__block">
+      <div class="section form__block" id="formBlock">
         <div class="container">
           <h2 class="form__block-title">Нужна результативность?</h2>
           <p class="form__block-text">Подберем <span class="purple">подходящее</span> решение<br> с учетом ваших
             возможностей и целей</p>
-          <form class="form__block-form">
+          <form class="form__block-form" id="form" enctype="multipart/form-data" method="post" onsubmit="submitForm(event)" action="../sendmail.php">
             <div class="form__block-top">
               <input class="form__input name" value="" name="name" id="name" placeholder="Имя" required />
               <input class="form__input contact" value="" name="contact" id="contact" placeholder="Телефон или почта"
@@ -286,7 +286,7 @@
               <input class="form__input about" value="" name="about" id="about"
                 placeholder="Коротко о проекте (необязательно)" />
             </div>
-            <button class="btn form__btn">Отправить</button>
+            <button type="submit" class="btn form__btn">Отправить</button>
           </form>
         </div>
       </div>

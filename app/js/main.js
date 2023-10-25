@@ -5,6 +5,8 @@ $('.services__slider').slick({
   centerPadding: '0px',
   slidesToShow: 3,
   slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
   infinite: true,
   dots: true,
   dotsClass: 'services__pagination',
@@ -42,7 +44,8 @@ function packageSlider() {
     dots: true,
     dotsClass: 'package__pagination',
     nextArrow: '.package__slide-btn--right',
-    prevArrow: '.package__slide-btn--left'
+    prevArrow: '.package__slide-btn--left',
+    initialSlide: 1
   });
 };
 
@@ -99,12 +102,66 @@ let tabletMenuButton = document.querySelector(".menu-tablet"),
 
 (function createMenuNav() {
   window.addEventListener("click", e => {
-    if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target == tabletMenuButton) {
+    if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
       tabletMenuButton.classList.add("menu-tablet--active");
       tabletMenu.classList.add("menu-tablet__nav--active");
-    } else if (e.target != tabletMenuButton && e.target != tabletMenu && !e.target.classList.contains("menu-tablet__nav-link")) {
+    } else if (e.target != tabletMenu && !e.target.classList.contains("menu-tablet__nav-link")) {
       tabletMenuButton.classList.remove("menu-tablet--active");
       tabletMenu.classList.remove("menu-tablet__nav--active");
     }
   })
 }());
+
+// Работа формы
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const form = document.getElementById("form");
+//   form.addEventListener("submit", formSend);
+
+//   async function formSend(e) {
+//     e.preventDefault();
+
+//     let formData = new FormData(form);
+    
+//     let response = await fetch('sendmail.php', {
+//       method: "POST",
+//       body: formData
+//     })
+//     if (response.ok) {
+//       form.reset();
+//       alert("ok")
+//     } else {
+//       alert("dont ok")
+//     }
+//   }
+// });
+async function submitForm(event) {
+  event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
+  try {
+  	// Формируем запрос
+    const response = await fetch(event.target.action, {
+    	method: 'POST',
+    	body: new FormData(event.target)
+    });
+    // проверяем, что ответ есть
+    if (!response.ok) throw (`Ошибка при обращении к серверу: ${response.status}`);
+    // проверяем, что ответ действительно JSON
+    const contentType = response.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      throw ('Ошибка обработки. Ответ не JSON');
+    }
+    // обрабатываем запрос
+    const json = await response.json();
+    if (json.result === "success") {
+    	// в случае успеха
+    	alert(json.info);
+    } else { 
+    	// в случае ошибки
+    	console.log(json);
+    	throw (json.info);
+    }
+  } catch (error) { // обработка ошибки
+    alert(error);
+  }
+}
+

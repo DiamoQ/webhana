@@ -2,6 +2,7 @@
   margin-top: 84px;
   padding-top: 88px;
   padding-bottom: 140px;
+  // height: calc(100vh - 84px);
   position: relative;
 
   @include phones {
@@ -111,7 +112,8 @@
       font-size: 40px;
       line-height: 40px; /* 90% */
       letter-spacing: -0.8px;
-      margin-bottom: 60px;
+      margin-bottom: 0px;
+      max-width: 100%;
     }
   }
 
@@ -199,6 +201,18 @@
     }
   }
 
+  &__mobile-image {
+    display: none;
+
+    @include phones {
+      display: block;
+      max-width: 279px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 3;
+    }
+  }
+
   .down-button {
     display: none;
     position: absolute;
@@ -235,6 +249,7 @@
   width: 102px;
   height: 102px;
   background-image: url(../images/logo/webhana-logo-black.png);
+  background-repeat: no-repeat;
   position: absolute;
   top: -88px;
   right: 0;

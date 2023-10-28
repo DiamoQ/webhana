@@ -14,7 +14,7 @@ $('.services__slider').slick({
   prevArrow: '.services__btn--left',
   responsive: [
     {
-      breakpoint: 769,
+      breakpoint: 991.8,
       settings: {
         arrows: true,
         centerMode: true,
@@ -50,12 +50,12 @@ function packageSlider() {
 };
 
 window.addEventListener("resize", function () {
-  if (window.innerWidth < 1024) {
+  if (window.innerWidth < 991.8) {
     packageSlider();
   };
 });
 
-if (window.innerWidth < 1024) {
+if (window.innerWidth < 991.8) {
   packageSlider();
 }
 
@@ -114,27 +114,26 @@ let tabletMenuButton = document.querySelector(".menu-tablet"),
 
 // Работа формы
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const form = document.getElementById("form");
-//   form.addEventListener("submit", formSend);
+let formSendedMessage = document.querySelector(".form-result--ok"),
+    formNotSendedMessage = document.querySelector(".form-result--false");
 
-//   async function formSend(e) {
-//     e.preventDefault();
+function viewResultFormMessage(form) {
+  let closeResultFormButton = form.querySelector(".form-result__close");
+ 
+  closeResultFormButton.addEventListener('click', (e) => {
+    form.classList.remove("active")
+  })
 
-//     let formData = new FormData(form);
-    
-//     let response = await fetch('sendmail.php', {
-//       method: "POST",
-//       body: formData
-//     })
-//     if (response.ok) {
-//       form.reset();
-//       alert("ok")
-//     } else {
-//       alert("dont ok")
-//     }
-//   }
-// });
+  form.classList.add("active");
+
+
+  removeResultFormMessage(form);
+}
+
+function removeResultFormMessage(form) {
+  setTimeout(() => { form.classList.remove("active")}, 6000);
+};
+
 async function submitForm(event) {
   event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
   try {
@@ -154,14 +153,16 @@ async function submitForm(event) {
     const json = await response.json();
     if (json.result === "success") {
     	// в случае успеха
-    	alert(json.info);
+    	viewResultFormMessage(formSendedMessage);
     } else { 
     	// в случае ошибки
-    	console.log(json);
-    	throw (json.info);
+      viewResultFormMessage(formNotSendedMessage);
+    	// console.log(json);
+    	// throw (json.info);
     }
   } catch (error) { // обработка ошибки
-    alert(error);
+    viewResultFormMessage(formNotSendedMessage);
+    // alert(error);
   }
 }
 

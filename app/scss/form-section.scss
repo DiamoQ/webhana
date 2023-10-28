@@ -46,17 +46,52 @@
     @include tablets {
       bottom: -665px;
       top: initial;
+      display: none;
     }
 
     @include phones {
       content: url(../images/backgrounds//main-6-phone.png);
       position: absolute;
+      display: block;
       bottom: -135px;
       right: 0;
       z-index: -2;
     }
   }
-  
+
+  &--other {
+    &::before {
+      bottom: -70%;
+      top: initial;
+
+      @include phones {
+        bottom: -265px;
+        top: initial;
+        display: none;
+      }
+    }
+
+    &::after {
+      bottom: -245px;
+      top: initial;
+      height: 200px;
+      width: 500px;
+      overflow: hidden;
+
+      @include tablets {
+        bottom: -665px;
+        top: initial;
+      }
+
+      @include phones {
+        bottom: -135px;
+        top: 15%;
+        width: initial;
+        height: initial;
+      }
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -154,10 +189,10 @@
       @include tablets {
         content: url(../images/backgrounds/main-4-tablet.png);
         transform: rotateZ(90deg);
-        padding: 120px 0 205px;
+        padding: 0;
         position: absolute;
-        top: -330px;
-        left: 100px;
+        top: -180px;
+        left: 140px;
         z-index: -1;
       }
 
@@ -166,6 +201,28 @@
         transform: none;
         padding: 0;
         position: absolute;
+      }
+    }
+
+    &--other {
+      &::before {
+        @include tablets {
+          content: url(../images/backgrounds/main-4-tablet-other.png);
+          transform: rotateZ(0);
+          padding: 0;
+          position: absolute;
+          top: initial;
+          bottom: -280px;
+          left: 10px;
+          z-index: -1;
+        }
+  
+        @include phones {
+          content: " ";
+          transform: none;
+          padding: 0;
+          position: absolute;
+        }
       }
     }
   }
@@ -190,7 +247,7 @@
     border: none;
     border-bottom: 1px solid $text3;
 
-    @include phones {     
+    @include phones {
       font-size: 16px;
       line-height: 100%; /* 16px */
       letter-spacing: -0.32px;
@@ -208,8 +265,8 @@
       box-shadow: 0 0 20px red;
     }
   }
-  
-  input:focus, 
+
+  input:focus,
   input:focus-visible {
     outline: none;
     border: none;

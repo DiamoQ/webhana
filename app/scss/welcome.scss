@@ -2,19 +2,21 @@
   margin-top: 84px;
   padding-top: 88px;
   padding-bottom: 140px;
-  // height: calc(100vh - 84px);
+  height: calc(100vh - 84px);
   position: relative;
 
   @include phones {
     margin-top: 48px;
     padding-top: 68px;
     padding-bottom: 0px;
+    height: calc(100vh - 44px);
   }
 
   .container {
     display: flex;
     flex-direction: column;
     position: relative;
+    justify-content: space-between;
 
     @include tablets {
       height: calc(100vh - 172px);
@@ -39,7 +41,7 @@
 
   &::before {
     content: " ";
-    background-image: url(../images/backgrounds/main-1.png);
+    background-image: linear-gradient( rgba(185, 234, 255, .3), rgba(118, 53, 208, .3)), url(../images/backgrounds/main-1.png);
     background-repeat: no-repeat;
     background-position-x: right;
     background-size: auto 100%;
@@ -65,7 +67,7 @@
 
   &::after {
     content: " ";
-    background-image: url(../images/backgrounds/main-2.png);
+    background-image: linear-gradient( rgba(185, 234, 255, .3), rgba(118, 53, 208, .3)), url(../images/backgrounds/main-2.png);
     background-repeat: no-repeat;
     background-position-x: right;
     background-size: 100%;
@@ -75,8 +77,14 @@
     position: absolute;
     bottom: -93px;
     right: -215px;
+    z-index: -2;
+
+    @include laptops {
+      display: none;
+    }
 
     @include tablets {
+      display: block;
       width: 456px;
       height: 445px;
       right: -90px;
@@ -89,12 +97,116 @@
     }
   }
 
+  &--other {
+    &::before {
+      content: " ";
+      background-image: url(../images/backgrounds/main-1-other.svg);
+      width: 340px;
+      height: 1085px;
+      border-radius: 0%;
+      position: absolute;
+      top: 75%;
+      right: initial;
+      left: 0;
+      transform: translate(0%, -50%);
+  
+      @include tablets {
+        background-image: url(../images/backgrounds/main-1-other-tablets.png);
+        width: 264px;
+        height: 523px;
+        top: 0;
+        transform: translate(0, -3%);
+      }
+  
+      @include phones {
+        width: 220px;
+        height: 440px;
+        transform: translate(0, -8%);
+      }
+    }
+
+    &::after {
+      content: " ";
+      background-position-x: center;
+      width: 706px;
+      height: 690px;
+      border-radius: 0%;
+      bottom: -70px;
+      right: 0px;
+      z-index: -2;
+  
+      @include laptops {
+        display: none;
+      }
+  
+      @include tablets {
+        display: block;
+        width: 456px;
+        height: 445px;
+        right: -20%;
+      }
+  
+      @include phones {
+        width: 148px;
+        height: 292px;
+        bottom: 20%;
+        right: -7px;
+        background-size: contain;
+      }
+    }
+
+    &-develop {
+      &::after {
+        content: " ";
+        background-image: url(../images/backgrounds/main-2-other-pages-develop.png);
+        
+        @include tablets {
+          background-image: url(../images/backgrounds/main-2-other-pages-develop-tablets.png);
+        }
+
+        @include phones {
+          background-image: url(../images/backgrounds/main-2-other-pages-phones.png);
+        }
+      }
+    }
+
+    &-analitic {
+      &::after {
+        content: " ";
+        background-image: url(../images/backgrounds/main-2-other-pages-analitic.png);
+
+        @include tablets {
+          background-image: url(../images/backgrounds/main-2-other-pages-analitic-tablets.png);
+        }
+
+        @include phones {
+          background-image: url(../images/backgrounds/main-2-other-pages-phones.png);
+        }
+      }
+    }
+
+    &-smm {
+      &::after {
+        content: " ";
+        background-image: url(../images/backgrounds/main-2-other-pages-smm.png);
+
+        @include tablets {
+          background-image: url(../images/backgrounds/main-2-other-pages-smm-tablets.png);
+        }
+
+        @include phones {
+          background-image: url(../images/backgrounds/main-2-other-pages-phones.png);
+        }
+      }
+    }
+  }
+
   &__title {
     font-size: 80px;
     font-style: normal;
     font-weight: 700;
     line-height: 110%; /* 88px */
-    margin-bottom: 74px;
+    // margin-bottom: 74px;
 
     &--develop {
       max-width: 90%;
@@ -122,7 +234,7 @@
     font-style: normal;
     font-weight: 300;
     line-height: 130%; /* 62.4px */
-    margin-bottom: 199px;
+    // margin-bottom: 199px;
     max-width: 70%;
 
     &--bold {
@@ -136,6 +248,10 @@
       max-width: 394px;
       margin-left: auto;
       margin-bottom: 0;
+
+      &--other {
+        margin-left: initial;
+      }
     }
 
     @include phones {

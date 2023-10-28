@@ -63,11 +63,11 @@
       </nav>
     </header>
     <main>
-      <div class="section welcome">
+      <div class="section welcome welcome--other welcome--other-develop ">
         <div class="container">
-          <h1 class="title welcome__title welcome__title--develop">Увеличим доходы вашей компании в <span class="orange">2 раза</span> с помощью сайта</h1>
+          <h1 class="title welcome__title welcome__title--develop">Увеличим доходы вашей компании в <span class="orange">2&nbsp;раза</span> с помощью сайта</h1>
           <image class="welcome__mobile-image" src="./images/icons/develop-mobile-image.png" alt="Приветственное изображение"/>
-          <p class="welcome__text">Ваш сайт давно не изменялся? Бесплатно оценим <span class="welcome__text--bold">эффективность</span> его дизайна и предложим свои решения</p>
+          <p class="welcome__text welcome__text--other">Ваш сайт давно не изменялся? Бесплатно оценим <span class="welcome__text--bold">эффективность</span> его дизайна и предложим свои решения</p>
           <a href="#formBlock"  class="btn welcome__btn">Обсудить проект</a>
           <a href="#formBlock"  class="btn welcome__btn welcome__btn--tablet">Связаться</a>
           <a href="#present" class="down-button"></a>
@@ -91,7 +91,7 @@
           </div>
         </div>
       </div>
-      <div class="section develop-steps">
+      <div class="section develop-steps third-back four-back four-back--visible four-back--unvisible">
         <div class="container">
           <h2 class="develop-steps__block-title">Этапы разработки сайта</h2>
           <div class="develop-steps__block">
@@ -140,12 +140,12 @@
           </div>
         </div>
       </div>
-      <div class="section form__block" id="formBlock">
-        <div class="container">
+      <div class="section form__block form__block--other" id="formBlock">
+        <div class="container four-back four-back--other">
           <h2 class="form__block-title">Нужна результативность?</h2>
           <p class="form__block-text">Подберем <span class="purple">подходящее</span> решение<br> с учетом ваших
             возможностей и целей</p>
-          <form class="form__block-form">
+          <form class="form__block-form form__block-form--other" id="form" enctype="multipart/form-data" method="post" onsubmit="submitForm(event)" action="../sendmail.php">
             <div class="form__block-top">
               <input class="form__input name" value="" name="name" id="name" placeholder="Имя" required />
               <input class="form__input contact" value="" name="contact" id="contact" placeholder="Телефон или почта"
@@ -155,7 +155,7 @@
               <input class="form__input about" value="" name="about" id="about"
                 placeholder="Коротко о проекте (необязательно)" />
             </div>
-            <button class="btn form__btn">Отправить</button>
+            <button type="submit" class="btn form__btn">Отправить</button>
           </form>
         </div>
       </div>
@@ -201,6 +201,36 @@
         </div>
       </div>
     </footer>
+
+    <div class="form-result form-result--ok">
+      <div class="form-result__message">
+        <div class="form-result__left">
+          <h3 class="form-result__title">Ваша заявка отправлена!</h3>
+          <div class="form-result__text-block">
+            <p class="form-result__text">Пожалуйста, дождитесь от нас обратной связи</p>
+            <div class="form-result__right form-result__right--tablet"></div>
+          </div>
+        </div>
+        <div class="form-result__right"></div>
+        <div class="form-result__close">
+        </div>
+      </div>
+    </div>
+    <div class="form-result form-result--false">
+      <div class="form-result__message">
+        <div class="form-result__left">
+          <h3 class="form-result__title">Произошла ошибка</h3>
+          <div class="form-result__text-block">
+            <p class="form-result__text">Убедитесь в том, что вы ввели свои данные правильно</p>
+            <div class="form-result__right form-result__right--tablet"></div>
+          </div>
+        </div>
+        <div class="form-result__right"></div>
+        <div class="form-result__close">
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

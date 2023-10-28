@@ -2,7 +2,11 @@
   padding: 85px 0;
   position: relative;
 
-  @include tablets {
+  @include laptops {
+    padding: 0;
+  }
+
+  @include laptops-xs {
     padding: 120px 0 60px 0;
   }
 
@@ -13,6 +17,14 @@
   .container {
     max-height: 620px;
     transition: max-height 0.6 ease;
+
+    @include laptops {
+      max-height: initial;
+    }
+
+    @include tablets {
+      max-height: 620px;
+    }
 
     @include phones {
       padding-bottom: 48px;
@@ -32,35 +44,6 @@
     }
   }
 
-  &::before {
-    content: url(../images/backgrounds/main-4.png);
-    border-radius: 50%;
-    position: absolute;
-    top: -83px;
-    left: calc(50% - 30px);
-    z-index: -2;
-
-    @include tablets {
-      & {
-        content: url(../images/backgrounds/main-4-tablet.png);
-        top: calc(50% - 11px);
-        transform: translateY(-50%);
-        right: 0;
-        left: auto;
-      }
-    }
-
-    @include phones {
-      & {
-        content: url(../images/backgrounds/main-4-phone.png);
-        top: 5%;
-        transform: translateY(-50%);
-        right: 0;
-        left: auto;
-      }
-    }
-  }
-
   .slick-list {
     overflow: visible !important;
     margin-bottom: 48px;
@@ -72,6 +55,11 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    @include laptops {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
 
     .slick-slide {
       display: flex !important;
@@ -86,6 +74,14 @@
     min-width: 360px;
     width: 100%;
     border-radius: 60px;
+
+    @include laptops {
+      margin-bottom: 100px;
+    }
+
+    @include laptops-xs {
+      margin-bottom: 0;
+    }
 
     @include phones {
       max-width: 266px;
@@ -107,7 +103,7 @@
       opacity: 1;
       transition: opacity 0.6s ease;
 
-      @include tablets {
+      @include laptops-xs {
         min-height: 428px;
         max-height: 428px;
         padding: 61px 0 55px;
@@ -135,7 +131,7 @@
       background: #b59ed6;
       box-shadow: 0px -13.5px 22.5px 0px rgba(0, 0, 0, 0.15);
 
-      @include tablets {
+      @include laptops-xs {
         padding: 15px 0;
         width: 236px;
         border-radius: 12px;
@@ -156,7 +152,7 @@
       line-height: 85.5px; /* 178.125% */
       letter-spacing: -0.96px;
 
-      @include tablets {
+      @include laptops-xs {
         text-shadow: 0px 2.624399423599243px 2.624399423599243px rgba(0, 0, 0, 0.25);
         font-size: 32px;
         line-height: 62.329px; /* 194.78% */
@@ -172,7 +168,7 @@
       line-height: 65.25px; /* 203.906% */
       letter-spacing: -0.64px;
 
-      @include tablets {
+      @include laptops-xs {
         font-size: 22px;
         line-height: 47.567px; /* 216.215% */
         letter-spacing: -0.44px;
@@ -204,7 +200,7 @@
         opacity 1.2s ease,
         padding 0.6s ease;
 
-      @include tablets {
+      @include laptops-xs {
         border-radius: 44px;
       }
     }
@@ -264,7 +260,7 @@
     line-height: 48px; /* 120% */
     letter-spacing: -0.8px;
 
-    @include tablets {
+    @include laptops-xs {
       font-size: 28px;
       line-height: 34.992px; /* 124.971% */
       letter-spacing: -0.56px;
@@ -289,7 +285,7 @@
     justify-content: center;
     align-items: center;
 
-    @include tablets {
+    @include laptops-xs {
       width: 210px;
       height: 52px;
     }
@@ -303,7 +299,7 @@
     border-radius: 18px;
     background: $orange;
 
-    @include tablets {
+    @include laptops-xs {
       border-radius: 12px;
       position: absolute;
       bottom: -30px;
@@ -321,7 +317,7 @@
     background: var(--background-black, #1f1f1f);
     box-shadow: 0px 3.6px 3.6px 0px rgba(0, 0, 0, 0.25);
 
-    @include tablets {
+    @include laptops-xs {
       border-radius: 12px;
     }
   }
@@ -336,7 +332,7 @@
     z-index: 2;
     visibility: hidden;
 
-    @include tablets {
+    @include laptops-xs {
       visibility: visible;
       top: 50%;
       width: 22px;
@@ -350,7 +346,7 @@
   }
 
   &__slide-btn--right {
-    @include tablets {
+    @include laptops-xs {
       content: url(../images/icons/nextArrow.svg);
       right: 150px;
     }
@@ -358,18 +354,18 @@
     @include phones {
       right: 63px;
     }
-    
-    @include phones-s{
+
+    @include phones-s {
       right: 35px;
     }
 
-    @include phones-xs{
+    @include phones-xs {
       right: 15px;
     }
   }
 
   &__slide-btn--left {
-    @include tablets {
+    @include laptops-xs {
       content: url(../images/icons/prevArrow.svg);
       left: 150px;
     }
@@ -378,11 +374,11 @@
       left: 63px;
     }
 
-    @include phones-s{
+    @include phones-s {
       left: 35px;
     }
 
-    @include phones-xs{
+    @include phones-xs {
       left: 15px;
     }
   }
@@ -394,7 +390,7 @@
     gap: 20px;
     visibility: hidden;
 
-    @include tablets {
+    @include laptops-xs {
       visibility: visible;
     }
 
@@ -418,6 +414,64 @@
 
       button {
         visibility: hidden;
+      }
+    }
+  }
+}
+
+.four-back {
+  position: relative;
+  &::after {
+    content: url(../images/backgrounds/main-4.png);
+    border-radius: 50%;
+    position: absolute;
+    top: -83px;
+    left: calc(50% - 30px);
+    z-index: -2;
+
+    @include tablets {
+      & {
+        display: none;
+        content: url(../images/backgrounds/main-4-tablet.png);
+        top: calc(50% - 11px);
+        transform: translateY(-50%);
+        right: 0;
+        left: auto;
+      }
+    }
+
+    @include phones {
+      & {
+        content: url(../images/backgrounds/main-4-phone.png);
+        top: 5%;
+        transform: translateY(-50%);
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  &.four-back--unvisible {
+    &::after {
+      display: none;
+      top: 0;
+      transform: translateY(-150%);
+    }
+
+    @include phones {
+      &.third-back::before {
+        content: url(../images/backgrounds//main-5-phone.png);
+        top: 0;
+        transform: translateY(15%);
+      }
+    }
+  }
+
+  &.four-back--visible {
+    @include tablets {
+      &::after {
+        content: url(../images/backgrounds/main-4-tablet.png);
+        display: block;
       }
     }
   }

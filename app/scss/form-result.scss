@@ -1,0 +1,167 @@
+.form-result {
+  opacity: 0;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  background: rgba($color: #000000, $alpha: 0.6);
+  z-index: 10;
+  position: fixed;
+  color: $text3;
+  transition:
+    visibility 0.6s ease,
+    opacity 0.6s ease;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      visibility 0.6s ease,
+      opacity 0.6s ease;
+  }
+
+  &__message {
+    position: absolute;
+    z-index: 12;
+    padding: 80px 48px;
+    border-radius: 18px;
+    background: $orange;
+    box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1120px;
+
+    @include tablets {
+      width: 420px;
+      padding: 24px 36px;
+      border-radius: 12px;
+    }
+
+    @include phones {
+      width: 300px;
+      padding: 32px 12px;
+      border-radius: 12px;
+      box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__left {
+    flex: 13;
+  }
+
+  &__right {
+    flex: 2;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 136.5px;
+
+    @include tablets {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+      height: 64px;
+      width: 64px;
+    }
+  }
+
+  &--ok &__right {
+    background: url("../images/icons/form-sended.svg");
+
+    &--tablet {
+      @include tablets {
+        flex: 4;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+      }
+
+      @include phones {
+        flex: 5;
+      }
+    }
+  }
+
+  &--false &__right {
+    background: url("../images/icons/form-not-sended.svg");
+
+    &--tablet {
+      @include tablets {
+        flex: 4;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+      }
+
+      @include phones {
+        flex: 5;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 130%; /* 72.8px */
+    margin-bottom: 20px;
+
+    @include tablets {
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    @include phones {
+      font-size: 20px;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 130%; /* 41.6px */
+
+    @include tablets {
+      font-size: 24px;
+      flex: 6;
+    }
+
+    @include phones {
+      font-size: 16px;
+      flex: 5;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    cursor: pointer;
+    top: 24px;
+    right: 24px;
+    width: 45px;
+    height: 45px;
+    background: url("../images/icons/packageClose.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include tablets {
+      width: 24px;
+      height: 24px;
+      top: 5px;
+      right: 5px;
+    }
+
+    @include phones {
+      font-size: 16px;
+    }
+  }
+}

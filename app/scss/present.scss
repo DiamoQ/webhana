@@ -1,8 +1,33 @@
 .present {
   padding: 73px 0;
+  position: relative;
 
   @include phones {
     display: none;
+  }
+
+  &::before {
+    content: " ";
+    display: none;
+    border-radius: 0;
+    position: absolute;
+    z-index: -2;
+
+    @include tablets {
+      display: block;
+      background-image: url(../images/backgrounds/welcome-container-tablet-background.png);
+      background-repeat: no-repeat;
+      width: 299px;
+      height: 292px;
+      top: 0;
+      left: 0;
+    }
+
+    @include phones {
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__block {

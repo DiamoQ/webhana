@@ -110,7 +110,7 @@ let tabletMenuButton = document.querySelector(".menu-tablet"),
       tabletMenu.classList.remove("menu-tablet__nav--active");
     }
   });
-  window.addEventListener("touch", e => {
+  window.addEventListener("touchstart", e => {
     if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
       tabletMenuButton.classList.add("menu-tablet--active");
       tabletMenu.classList.add("menu-tablet__nav--active");

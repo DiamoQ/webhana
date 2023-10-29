@@ -100,26 +100,26 @@ if (window.innerWidth < 769 && packageBlock) {
 let tabletMenuButton = document.querySelector(".menu-tablet"),
   tabletMenu = document.querySelector(".menu-tablet__nav");
 
-(function createMenuNav() {
-  window.addEventListener("click", e => {
-    if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
-      tabletMenuButton.classList.add("menu-tablet--active");
-      tabletMenu.classList.add("menu-tablet__nav--active");
-    } else if (e.target != tabletMenu && !e.target.classList.contains("menu-tablet__nav-link")) {
-      tabletMenuButton.classList.remove("menu-tablet--active");
-      tabletMenu.classList.remove("menu-tablet__nav--active");
-    }
-  });
-  window.addEventListener("touchstart", e => {
-    if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
-      tabletMenuButton.classList.add("menu-tablet--active");
-      tabletMenu.classList.add("menu-tablet__nav--active");
-    } else if (e.target != tabletMenu && !e.target.classList.contains("menu-tablet__nav-link")) {
-      tabletMenuButton.classList.remove("menu-tablet--active");
-      tabletMenu.classList.remove("menu-tablet__nav--active");
-    }
-  })
-}());
+// (function createMenuNav() {
+//   window.addEventListener("click", e => {
+//     if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
+//       tabletMenuButton.classList.add("menu-tablet--active");
+//       tabletMenu.classList.add("menu-tablet__nav--active");
+//     } else if (e.target != tabletMenu && !e.target.classList.contains("menu-tablet__nav-link")) {
+//       tabletMenuButton.classList.remove("menu-tablet--active");
+//       tabletMenu.classList.remove("menu-tablet__nav--active");
+//     }
+//   });
+// }());
+window.addEventListener("click", e => {
+  if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
+    tabletMenuButton.classList.add("menu-tablet--active");
+    tabletMenu.classList.add("menu-tablet__nav--active");
+  } else if (e.target != tabletMenu && !e.target.classList.contains("menu-tablet__nav-link")) {
+    tabletMenuButton.classList.remove("menu-tablet--active");
+    tabletMenu.classList.remove("menu-tablet__nav--active");
+  }
+});
 
 // Работа формы
 

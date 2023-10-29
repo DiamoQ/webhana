@@ -118,3 +118,67 @@ a,
 button {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+.welcome__btn,
+.package__btn,
+.form__block .form__btn,
+.services .services__slide .service__btn,
+.header .header__contacts-link,
+.footer__menu-link, 
+.footer__contacts-link {
+  transition: background .5s ease;
+}
+
+.welcome__btn,
+.package__btn,
+.form__block .form__btn {
+  &:hover {
+    background: $purple;
+    transition: background .5s ease;
+
+    @include tablets {
+      background: $orange;
+    }
+  }
+}
+
+.services .services__slide .service__btn {
+  &:hover {
+    background: $orange;
+    transition: background .5s ease;
+
+    @include tablets {
+      background: $purple;
+    }
+  }
+}
+
+.header .header__contacts-link,
+.header .menu__nav-link ,
+.footer__menu-link, 
+.footer__contacts-link {
+  transition: color .4s ease;
+
+  &:hover {
+    color: $orange;
+    transition: color .4s ease;
+  }
+}
+
+.header .header__contacts-link,
+.header .menu__nav-link  {
+  &:hover {
+    @include tablets {
+      color: $base;
+    }
+  }
+}
+
+.footer__menu-link, 
+.footer__contacts-link  {
+  &:hover {
+    @include tablets {
+      color: #f5f5f5;
+    }
+  }
+}

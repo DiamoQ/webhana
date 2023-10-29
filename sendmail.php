@@ -1,8 +1,8 @@
 <?php
 // Файлы phpmailer
-require 'phpmailer/PHPMailer.php';
-require 'phpmailer/SMTP.php';
-require 'phpmailer/Exception.php';
+require './PHPMailer-6.8.1/src/PHPMailer.php';
+require './PHPMailer-6.8.1/src/SMTP.php';
+require './PHPMailer-6.8.1/src/Exception.php';
 
 # проверка, что ошибки нет
 if (!error_get_last()) {
@@ -33,16 +33,16 @@ if (!error_get_last()) {
     $mail->Debugoutput = function($str, $level) {$GLOBALS['data']['debug'][] = $str;};
     
     // Настройки вашей почты
-    $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
-    $mail->Username   = 'username'; // Логин на почте
-    $mail->Password   = 'password'; // Пароль на почте
+    $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
+    $mail->Username   = 'settingSMTP1@gmail.com'; // Логин на почте
+    $mail->Password   = '01012001Wq'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('username@yandex.ru', 'Name'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('settingSMTP1@gmail.com', 'Письмо с сайта'); // Адрес самой почты и имя отправителя
     
     // Получатель письма
-    $mail->addAddress('poluchatel@ya.ru');  
-    $mail->addAddress('poluchatel2@gmail.com'); // Ещё один, если нужен
+    $mail->addAddress('toniem222@gmail.com');  
+    // $mail->addAddress('poluchatel2@gmail.com'); // Ещё один, если нужен
     
     // // Прикрипление файлов к письму
     // if (!empty($file['name'][0])) {

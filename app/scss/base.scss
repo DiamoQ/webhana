@@ -125,7 +125,8 @@ button {
 .services .services__slide .service__btn,
 .header .header__contacts-link,
 .footer__menu-link, 
-.footer__contacts-link {
+.footer__contacts-link,
+.package__form-btn {
   transition: background .5s ease;
 }
 
@@ -149,6 +150,17 @@ button {
 
     @include tablets {
       background: $purple;
+    }
+  }
+}
+
+.package__form-btn {
+  &:hover {
+    background: $text2;
+    transition: background .5s ease;
+
+    @include tablets {
+      background: $background-black;
     }
   }
 }

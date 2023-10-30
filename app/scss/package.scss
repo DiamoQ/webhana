@@ -15,7 +15,7 @@
   }
 
   .container {
-    max-height: 620px;
+    max-height: initial;
     transition: max-height 0.6 ease;
 
     @include laptops {
@@ -284,6 +284,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     @include laptops-xs {
       width: 210px;

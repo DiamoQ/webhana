@@ -111,15 +111,6 @@ let tabletMenuButton = document.querySelector(".menu-tablet"),
 //     }
 //   });
 // }());
-window.addEventListener("click", e => {
-  if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
-    tabletMenuButton.classList.add("menu-tablet--active");
-    tabletMenu.classList.add("menu-tablet__nav--active");
-  } else if (e.target != tabletMenu && !e.target.classList.contains("menu-tablet__nav-link")) {
-    tabletMenuButton.classList.remove("menu-tablet--active");
-    tabletMenu.classList.remove("menu-tablet__nav--active");
-  }
-});
 window.addEventListener("touchstart", e => {
   if (!tabletMenuButton.classList.contains("menu-tablet--active") && e.target.closest(".menu-tablet")) {
     tabletMenuButton.classList.add("menu-tablet--active");
@@ -133,23 +124,24 @@ window.addEventListener("touchstart", e => {
 // Работа формы
 
 let formSendedMessage = document.querySelector(".form-result--ok"),
-    formNotSendedMessage = document.querySelector(".form-result--false");
+    formNotSendedMessage = document.querySelector(".form-result--false"),
+    form = document.querySelector("#form");
 
-function viewResultFormMessage(form) {
-  let closeResultFormButton = form.querySelector(".form-result__close");
+function viewResultFormMessage(formMessage) {
+  let closeResultFormButton = formMessage.querySelector(".form-result__close");
  
   closeResultFormButton.addEventListener('click', (e) => {
-    form.classList.remove("active")
+    formMessage.classList.remove("active")
   })
 
-  form.classList.add("active");
+  formMessage.classList.add("active");
 
 
-  removeResultFormMessage(form);
+  removeResultFormMessage(formMessage);
 }
 
-function removeResultFormMessage(form) {
-  setTimeout(() => { form.classList.remove("active")}, 6000);
+function removeResultFormMessage(formMessage) {
+  setTimeout(() => { formMessage.classList.remove("active")}, 6000);
 };
 
 async function submitForm(event) {
@@ -172,6 +164,7 @@ async function submitForm(event) {
     if (json.result === "success") {
     	// в случае успеха
     	viewResultFormMessage(formSendedMessage);
+      form.reset();
     } else { 
     	// в случае ошибки
       viewResultFormMessage(formNotSendedMessage);
